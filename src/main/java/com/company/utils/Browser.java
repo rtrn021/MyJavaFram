@@ -2,13 +2,20 @@ package com.company.utils;
 
 import com.company.utils.configuration.PropertiesHolder;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+import java.util.Set;
 
 /**
  *
@@ -78,6 +85,34 @@ public class Browser {
         return driver.getCurrentUrl();
     }
 
+    public static void close() {
+        if(driver != null) {
+            Set<String> handles = driver.getWindowHandles();
+            for (String handle : handles) {
+                driver.switchTo().window(handle);
+                driver.close();
+            }
+        }
+    }
+
+    public static void refreshPage(){
+        driver.navigate().refresh();
+    }
+
+    public static void acceptPop(){
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+    }
+
+    public static void screenShot(String filePath){
+        try{
+            TakesScreenshot ts = (TakesScreenshot) driver;
+            File src = ts.getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(src,new File(filePath),false);
+        }catch (Exception e){
+            log.warn("Screenshot exception storing in filepath " + filePath);
+        }
+    }
     
 
 
