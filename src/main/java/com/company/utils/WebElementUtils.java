@@ -71,6 +71,39 @@ public class WebElementUtils {
         Browser.driver.switchTo().window(tabs.get(tabs.size()-1));
     }
 
+    public static void elementSafeClick(WebElement element) {
+        WaitUtils.waitForElementVisible(element);
+        WaitUtils.waitForElementToBeClickable(element,3);
+        int maxTries = 10;
+        for( int i = 0; i < maxTries; i++){
+            try{
+                element.click();
+                break;
+            }catch (Exception e){
+                if(i == maxTries-1)
+                    throw e;
+            }
+            WaitUtils.sleepMillis(500);
+        }
+    }
+
+    public static void sendKeysSafe(WebElement element, String stringToSend) {
+        WaitUtils.waitForElementVisible(element);
+        WaitUtils.waitForElementToBeClickable(element,10);
+        int maxTries = 10;
+        for(int i = 0; i<maxTries; i++){
+            try{
+                element.sendKeys(stringToSend);
+                element.sendKeys(Keys.TAB);
+                break;
+            }catch (InvalidElementStateException e){
+                if( i == maxTries)
+                    throw e;
+            }
+            WaitUtils.sleepMillis(500);
+        }
+    }
+
 
 
 }

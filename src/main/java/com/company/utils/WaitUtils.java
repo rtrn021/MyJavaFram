@@ -108,7 +108,8 @@ public class WaitUtils {
     public static void waitForPageToLoad(long timeOutInSeconds) {
         ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
-                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+                return ((JavascriptExecutor) driver).
+                        executeScript("return document.readyState").equals("complete");
             }
         };
 
@@ -123,7 +124,8 @@ public class WaitUtils {
     public static void waitForPageToLoad() {
         ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
-                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+                return ((JavascriptExecutor) driver).
+                        executeScript("return document.readyState").equals("complete");
             }
         };
         Browser.defaultDriverWait.until(pageLoadCondition);
@@ -136,7 +138,8 @@ public class WaitUtils {
             throw new Exception("Cannot find 'body' region on the page");
         boolean textFound = false;
         for(int count = 0; count < 10 ; count++){
-            textFound = Browser.driver.findElement(By.cssSelector("body")).getText().contains(textToAppear);
+            textFound = Browser.driver.findElement(By.cssSelector("body")).
+                    getText().contains(textToAppear);
             if(textFound)
                 break;
             sleepMillis(300);
