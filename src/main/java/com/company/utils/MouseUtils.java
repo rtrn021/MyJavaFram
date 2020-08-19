@@ -3,8 +3,6 @@ package com.company.utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.InvalidElementStateException;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -52,6 +50,27 @@ public class MouseUtils {
         action.moveToElement(element).doubleClick().build().perform();
     }
 
+    public static void navigateToFromTab(By fromTab, By to){
+        int count = 0;
+        boolean found = false;
+        while(count<7){
+            try {
+                WaitUtils.waitForElementVisibleLocated(fromTab);
+                hover(WebElementUtils.webElementFromLocator(fromTab));
+                WaitUtils.waitForElementVisibleLocated(to);
+                WebElementUtils.webElementFromLocator(to).click();
+                return;
+            }catch (Exception e){
+                log.warn(e.getClass() + " Exception caught!!! Refresh and try again!!!");
+                Browser.refreshPage();
+            }
+            throw new RuntimeException("Couldnt navigate to " + to + " from "+ fromTab);
+        }
+    }
+
+    public static void navigateToFromTab(String xpathFromTab, String xpathTo){
+        navigateToFromTab(By.xpath(xpathFromTab),By.xpath(xpathTo));
+    }
 
 
 }

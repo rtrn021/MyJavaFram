@@ -104,6 +104,13 @@ public class WebElementUtils {
         }
     }
 
+    public static WebElement webElementFromLocator(By locator){
+        WaitUtils.waitForElementVisibleLocated(locator);
+        WebElement element = Browser.driver.findElement(locator);
+        return element;
+    }
+
+
 
 
 }

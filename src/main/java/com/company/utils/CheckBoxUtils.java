@@ -1,6 +1,5 @@
 package com.company.utils;
 
-import jdk.internal.vm.compiler.collections.EconomicMap;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
