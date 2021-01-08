@@ -1,0 +1,65 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2020-08-24T21:52:50.707Z",
+        "line": 4,
+        "name": "TestScenario",
+        "description": "",
+        "id": "just-testing;testscenario",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 960107100,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Go to url",
+            "match": {
+              "location": "com.company.stepdefinitions.ProA.ProASteps.go_to_url()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1997100,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Complete the test",
+            "match": {
+              "location": "com.company.stepdefinitions.ProA.ProASteps.complete_the_test()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Atest_1"
+          },
+          {
+            "name": "@Scenario_Atest_1"
+          }
+        ]
+      }
+    ],
+    "name": "Just Testing",
+    "description": "",
+    "id": "just-testing",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/ProA/Atest_1.feature",
+    "tags": [
+      {
+        "name": "@Atest_1",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

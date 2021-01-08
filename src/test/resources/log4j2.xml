@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" dest="target/logs/log4j2.log">
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <RollingFile name="LogToRollingFile" fileName="target/logs/app.log"
+                     filePattern="target/logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+<!--                <SizeBasedTriggeringPolicy size="10 MB"/>-->
+            </Policies>
+        </RollingFile>
+
+    </Appenders>
+    <Loggers>
+        <!-- avoid duplicated logs with additivity=false -->
+        <Logger name="com.company" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="LogToRollingFile"/>
+        </Logger>
+        <Logger name="RUN_SUMMARY" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="LogToRollingFile"/>
+        </Logger>
+        <Root level="warn">
+            <AppenderRef ref="LogToConsole"/>
+        </Root>
+    </Loggers>
+</Configuration>

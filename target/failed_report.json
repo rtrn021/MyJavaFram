@@ -1,0 +1,154 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2020-08-24T18:23:03.788Z",
+        "line": 4,
+        "name": "TestScenario exception",
+        "description": "",
+        "id": "just-testing-exception;testscenario-exception",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9165352800,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Go to url",
+            "match": {
+              "location": "com.company.stepdefinitions.ProA.ProASteps.go_to_url()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.RuntimeException: Oh no RuntIme Exception here!!!\r\n\tat com.company.stepdefinitions.ProA.ProASteps.fail_with_exception(ProASteps.java:32)\r\n\tat ✽.Fail with exception(file:///C:/Users/Remzi/IdeaProjects/MyJavaFram/src/test/resources/ProA/Atest_2.feature:6)\r\n",
+              "duration": 3997600,
+              "status": "failed"
+            },
+            "line": 6,
+            "name": "Fail with exception",
+            "match": {
+              "location": "com.company.stepdefinitions.ProA.ProASteps.fail_with_exception()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 999000,
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "Complete the test",
+            "match": {
+              "location": "com.company.stepdefinitions.ProA.ProASteps.complete_the_test()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Atest_2"
+          },
+          {
+            "name": "@Scenario_Atest_2"
+          }
+        ]
+      }
+    ],
+    "name": "Just Testing exception",
+    "description": "",
+    "id": "just-testing-exception",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/ProA/Atest_2.feature",
+    "tags": [
+      {
+        "name": "@Atest_2",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2020-08-24T18:23:13.114Z",
+        "line": 4,
+        "name": "TestScenario assertion",
+        "description": "",
+        "id": "just-testing-assertion;testscenario-assertion",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8595535100,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Go to url",
+            "match": {
+              "location": "com.company.stepdefinitions.ProA.ProASteps.go_to_url()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected:\u003c0\u003e but was:\u003c1\u003e\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:835)\r\n\tat org.junit.Assert.assertEquals(Assert.java:647)\r\n\tat org.junit.Assert.assertEquals(Assert.java:633)\r\n\tat com.company.stepdefinitions.ProA.ProASteps.fail_with_assertion(ProASteps.java:37)\r\n\tat ✽.Fail with assertion(file:///C:/Users/Remzi/IdeaProjects/MyJavaFram/src/test/resources/ProA/Atest_3.feature:6)\r\n",
+              "duration": 3995900,
+              "status": "failed"
+            },
+            "line": 6,
+            "name": "Fail with assertion",
+            "match": {
+              "location": "com.company.stepdefinitions.ProA.ProASteps.fail_with_assertion()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1000200,
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "Complete the test",
+            "match": {
+              "location": "com.company.stepdefinitions.ProA.ProASteps.complete_the_test()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Atest_3"
+          },
+          {
+            "name": "@Scenario_Atest_3"
+          }
+        ]
+      }
+    ],
+    "name": "Just Testing assertion",
+    "description": "",
+    "id": "just-testing-assertion",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/ProA/Atest_3.feature",
+    "tags": [
+      {
+        "name": "@Atest_3",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

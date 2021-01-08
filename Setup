@@ -1,0 +1,5 @@
+1) Lombok:
+    > Add dependency and add plugin to IDE
+    > Then import lombok.annotations and add on top of the class(ex: lombok.Data)
+    > More info(https://projectlombok.org/)
+
