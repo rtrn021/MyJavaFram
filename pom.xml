@@ -85,7 +85,7 @@
 
     <profiles>
         <profile>
-            <id>smoke</id>
+            <id>ProA</id>
             <build>
                 <plugins>
                     <plugin>

@@ -26,8 +26,8 @@ public class LoginPage extends BasePage {
         if(selectedEnvironmentProperties==null)
             throw new RuntimeException("Environment Properties not found!");
 
-        environment = System.getProperty("env") != null ? System.getProperty("env") :
-                selectedEnvironmentProperties.getProperty("environment");
+//        environment = System.getProperty("env") != null ? System.getProperty("env") :
+//                selectedEnvironmentProperties.getProperty("environment");
 
         log.info("Environment: " + environment);
 
