@@ -52,7 +52,7 @@ public class MouseUtils {
 
     public static void navigateToFromTab(By fromTab, By to){
         int count = 0;
-        boolean found = false;
+//        boolean found = false;
         while(count<7){
             try {
                 WaitUtils.waitForElementVisibleLocated(fromTab);
@@ -63,9 +63,10 @@ public class MouseUtils {
             }catch (Exception e){
                 log.warn(e.getClass() + " Exception caught!!! Refresh and try again!!!");
                 Browser.refreshPage();
+                count++;
             }
-            throw new RuntimeException("Couldnt navigate to " + to + " from "+ fromTab);
         }
+        throw new RuntimeException("Couldnt navigate to " + to + " from "+ fromTab);
     }
 
     public static void navigateToFromTab(String xpathFromTab, String xpathTo){
